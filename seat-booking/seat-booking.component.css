@@ -1,0 +1,248 @@
+/* Global settings */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+/* Centering the content container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height of the viewport */
+  padding: 20px;
+  color: white; /* Default text color */
+  text-align: center; /* Centers text */
+  max-width: 90%;
+  margin: auto; /* Centers the container */
+  overflow: hidden; /* Prevents overflow */
+
+  background: linear-gradient(
+    135deg,
+    #0b022c 0%,
+    #0d8375 100%
+  ); /* Gradient background */
+}
+
+/* Card-like layout for the content */
+.content-box {
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3); /* More depth */
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: linear-gradient(
+    135deg,
+    #09033f 0%,
+    #b3454c 100%
+  ); /* Gradient background */
+}
+
+/* Add animation to hover effect */
+.content-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Stylish Main Heading - Train Seat Booking System */
+h1 {
+  font-size: 38px; /* Larger font size */
+  font-weight: 800;
+  color: #f3f5f8;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* Spacing between letters */
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sub Heading - Seat Availability */
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Seat Map styles */
+.seat-map {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px; /* Space below the seat map */
+}
+
+/* Row styling */
+.row {
+  display: flex;
+  justify-content: center; /* Center the seats in each row */
+  margin: 10px 0;
+}
+
+/* Seat styling */
+.seat {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid #555;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.available {
+  background-color: #32cd32;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.available:hover {
+  background-color: #228b22;
+  transform: scale(1.1);
+}
+
+.booked {
+  background-color: #ff6347;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Stylish button */
+button {
+  background-color: #0b4078;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-box {
+    padding: 15px;
+
+    max-width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .message {
+    color: white; /* Ensures the text color is white */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.6
+    ); /* Optional: a semi-transparent background */
+    padding: 10px; /* Adds some padding for better visibility */
+    border-radius: 5px; /* Rounds the corners */
+    margin-top: 15px; /* Adds spacing above the message */
+    font-size: 1.2em; /* Increases the font size for better readability */
+    max-width: 100%; /* Prevents overflow */
+    word-wrap: break-word; /* Breaks long words to prevent overflow */
+  }
+
+  .seat {
+    width: 45px;
+    height: 35px;
+    line-height: 35px;
+  }
+  button {
+    margin: 10px 1%; /* Equal margin on both sides */
+  }
+
+  button,
+  input {
+    font-size: 16px;
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 15px;
+  }
+  /* Add this class for the specific booked seats in row 1 */
+  .special-booked {
+    background-color: #ffffff !important; /* White color */
+    color: rgb(243, 233, 233) !important; /* Make text readable on white */
+    cursor: not-allowed;
+    border: 2px solid #555; /* Same border for consistency */
+  }
+
+  .row {
+    justify-content: center;
+  }
+  /* .input-container {
+    margin:; /* Adjust margin for mobile */
+  /* } */
+
+  input {
+    margin-right: 0; /* Remove right margin on mobile */
+    width: 90%; /* Responsive width for mobile */
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1.5em;
+  }
+
+  .input-field,
+  .book-button {
+    width: 10%;
+    margin-top: 10px;
+  }
+
+  .seat {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
